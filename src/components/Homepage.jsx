@@ -3,9 +3,9 @@ import ProductList from './ProductList';
 
 const Homepage = () => {
   return (
-    <div>
-      <ProductList></ProductList>
-    </div>
+    <>
+      <ProductList />
+    </>
   );
 };
 
