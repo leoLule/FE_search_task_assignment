@@ -8,7 +8,6 @@ function App() {
   return (
     <>
       <ProductContextProvider>
-        {' '}
         <Routes>
           <Route path="/" element={<Homepage />}></Route>
         </Routes>
