@@ -14,6 +14,17 @@ const ProductContextProvider = ({ children }) => {
       console.log(err);
     }
   };
+
+  // Function to get the direct image URL
+  const getDirectImageUrl = (url) => {
+    const fileId = extractFileId(url);
+    return `https://drive.google.com/uc?id=${fileId}`;
+  };
+  const extractFileId = (url) => {
+    const match = url.match(/\/d\/([^/]+)\//);
+    return match ? match[1] : '';
+  };
+
   useEffect(() => {
     fetchAllProducts();
   }, []);
@@ -24,6 +35,8 @@ const ProductContextProvider = ({ children }) => {
         setProductList,
         productList,
         fetchAllProducts,
+        getDirectImageUrl,
+        extractFileId,
       }}
     >
       {children}

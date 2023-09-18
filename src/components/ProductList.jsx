@@ -98,6 +98,7 @@
 //works also
 import React, { useContext, useEffect, useState } from 'react';
 import { ProductContext } from '../context/ProductContext';
+import Product from './Product';
 
 const ProductList = () => {
   const { productList, fetchAllProducts } = useContext(ProductContext);
@@ -114,31 +115,12 @@ const ProductList = () => {
     setSelectedImages(randomImages);
   };
 
-  // Function to extract the file ID from the Google Drive URL
-  const extractFileId = (url) => {
-    const match = url.match(/\/d\/([^/]+)\//);
-    return match ? match[1] : '';
-  };
-
-  // Function to get the direct image URL
-  const getDirectImageUrl = (url) => {
-    const fileId = extractFileId(url);
-    return `https://drive.google.com/uc?id=${fileId}`;
-  };
-
   return (
     <div className="product-list-container">
       <button onClick={selectRandomImages}>Randomize Images</button>
       <div className="random-images-container">
         {selectedImages.map((product) => (
-          <div className="random-image" key={product.id}>
-            <img
-              src={getDirectImageUrl(product.path)}
-              alt={`Image for ${product.id}`}
-              width="200px"
-              height="150px"
-            />
-          </div>
+          <Product product={product} key={product.id} />
         ))}
       </div>
     </div>
