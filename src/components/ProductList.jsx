@@ -105,7 +105,7 @@ const ProductList = () => {
   const [selectedImages, setSelectedImages] = useState([]);
 
   useEffect(() => {
-    fetchAllProducts(); // Assuming this function fetches the product list
+    fetchAllProducts(); //  fetches product list
   }, []);
 
   // Function to select 5 random images

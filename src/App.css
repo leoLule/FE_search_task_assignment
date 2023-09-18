@@ -44,3 +44,10 @@
   width: 300px;
   height: 500px;
 }
+.random-images-container {
+  display: flex;
+}
+
+.random-image {
+  margin: 0.5rem;
+}
