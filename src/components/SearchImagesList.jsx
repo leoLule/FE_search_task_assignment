@@ -1,9 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { ProductContext } from '../context/ProductContext';
 import TextField from '@mui/material/TextField';
-import Button from '@mui/material/Button';
 import { Container } from '@mui/material';
-import axios from 'axios';
 import Product from './Product';
 
 const SearchImagesList = () => {
@@ -36,13 +34,14 @@ const SearchImagesList = () => {
           onChange={(e) => setKeyword(e.target.value)}
         />
         <div>
-          {' '}
-          <Button onClick={handleSearch}>Search</Button>
+          <button className="search-btn" onClick={handleSearch}>
+            Search
+          </button>
         </div>
       </Container>
 
       <div className="image-results">
-        {searchResults.map((product, index) => (
+        {searchResults.map((product) => (
           <Product product={product} key={product.id} />
         ))}
       </div>

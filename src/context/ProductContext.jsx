@@ -9,13 +9,11 @@ const ProductContextProvider = ({ children }) => {
     try {
       const res = await axios.get('http://localhost:8080/products');
       setProductList(res.data);
-      console.log(res.data);
     } catch (err) {
       console.log(err);
     }
   };
 
-  // Function to get the direct image URL
   const getDirectImageUrl = (url) => {
     const fileId = extractFileId(url);
     return `https://drive.google.com/uc?id=${fileId}`;
