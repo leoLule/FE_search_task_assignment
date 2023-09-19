@@ -45,7 +45,8 @@
   height: 500px;
 }
 .random-images-container,
-.image-results {
+.image-results,
+.change-score-images {
   display: flex;
 }
 
