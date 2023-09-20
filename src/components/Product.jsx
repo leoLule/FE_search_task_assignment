@@ -6,7 +6,7 @@ const Product = ({ product }) => {
   const { getDirectImageUrl } = useContext(ProductContext);
   const [src, setSrc] = useState(getDirectImageUrl(product.path));
 
-  const handleImageError = (event) => {
+  const handleImageError = () => {
     setSrc(fallback);
   };
 

@@ -8,10 +8,8 @@ const ProductList = () => {
 
   useEffect(() => {
     fetchAllProducts();
-    //  fetches product list
   }, []);
 
-  // Function to select 5 random images
   const selectRandomImages = () => {
     const shuffledProducts = [...productList].sort(() => 0.5 - Math.random());
     const randomImages = shuffledProducts.slice(0, 5);
